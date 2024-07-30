@@ -5,6 +5,11 @@ import torch
 from TTS.api import TTS
 
 # Enable MPS fallback to CPU for unsupported operations
+# Do this for mac
+# pip install numpy
+# export CFLAGS="-I$(python -c 'import numpy; print(numpy.get_include())')"
+# export LDFLAGS="-L/usr/local/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/lib"
+
 
 if torch.cuda.is_available():
     device = "cuda"
